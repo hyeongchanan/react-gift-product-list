@@ -16,12 +16,12 @@ import {
 import { useFieldArray, useForm } from 'react-hook-form';
 import { ButtonSpace, CancleButton, Hr1Gray, ReceiverOne, ReceiverTitle, SubmitButton, XButton } from './ReceiverModal.styled';
 
-type Props = {
+type ModalStateProps = {
   isOpen: boolean;
   onClose: () => void;
 };
 
-const ReceiverModal = ({ isOpen, onClose }: Props) => {
+const ReceiverModal = ({ isOpen, onClose }: ModalStateProps) => {
   const { setReceivers } = useReceiver();
 
     type ReceiverFormValue = {
@@ -78,8 +78,8 @@ const ReceiverModal = ({ isOpen, onClose }: Props) => {
             </SimpleButton>
           </div>
           <ScrollBox>
-            {fields.map((_, i) => (
-              <div key={i}>
+            {fields.map((field, i) => (
+              <div key={field.id}>
                 {i >= 1 && <Hr1Gray />}
                 <ReceiverOne>
                   <SubTitle>

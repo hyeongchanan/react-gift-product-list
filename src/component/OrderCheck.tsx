@@ -49,7 +49,7 @@ const OrderCheck = () => {
 
   const price = item.price.sellingPrice
   const imageUrl = item.imageURL
-  const Name = item.name
+  const name = item.name
   const brandName = item.brandInfo.name
 
   const [productCount, setProductCount] = useState(0);
@@ -66,11 +66,11 @@ const OrderCheck = () => {
         <ProductBox>
           <ProductImage
             src={imageUrl}
-            alt={Name}
+            alt={name}
           />
           
           <ProductInfo>
-            <ProductName>{Name}</ProductName>
+            <ProductName>{name}</ProductName>
             <SubText>{brandName}</SubText>
             <Price>
               상품가 <span>{price}원</span>
